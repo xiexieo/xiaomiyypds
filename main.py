@@ -2,6 +2,7 @@
 # python >=3.8
 
 import requests,time,re,json,random
+import time
 
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 headers = {
@@ -309,6 +310,7 @@ if __name__ ==  "__main__":
             if len(setp_array) == 2:
                 step = str(random.randint(int(setp_array[0]),int(setp_array[1])))
                 print (f"已设置为随机步数（{setp_array[0]}-{setp_array[1]}）")
+                time.sleep(0.5)
             elif str(step) == '0':
                 step = ''
             push += main(user_list[line], passwd_list[line], step) + '\n'
